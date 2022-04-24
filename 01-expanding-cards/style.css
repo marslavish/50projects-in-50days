@@ -1,0 +1,108 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 2rem;
+}
+
+.card-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2%;
+}
+
+.card {
+  position: relative;
+  width: 6%;
+  height: 80%;
+  background: #eee;
+  cursor: pointer;
+  border-radius: 3vw;
+  background-size: cover;
+}
+
+.card__title {
+  display: none;
+}
+
+.expand .card__title {
+  position: absolute;
+  bottom: 0;
+  color: white;
+  display: block;
+  margin: 0 0 2rem 2rem;
+  font-size: 2.8rem;
+  font-weight: 300;
+  opacity: 0;
+  animation: fade-in 0.3s ease-in-out 0.6s forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.card-1 {
+  background-image: url("https://images.unsplash.com/photo-1504801284354-5aae3065f930?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80");
+}
+.card-2 {
+  background-image: url("https://images.unsplash.com/photo-1649612858008-8ed3e3655a1a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80");
+}
+.card-3 {
+  background-image: url("https://images.unsplash.com/photo-1649659583857-d58c189fcc59?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80");
+}
+.card-4 {
+  background-image: url("https://images.unsplash.com/photo-1616604745302-60a195c7061a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1229&q=80");
+}
+.card-5 {
+  background-image: url("https://images.unsplash.com/photo-1620647562460-3c02051fbc23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80");
+}
+
+.expand {
+  animation: expand 1s ease-in-out forwards;
+}
+
+@keyframes expand {
+  0% {
+    width: 6%;
+  }
+  100% {
+    width: 55%;
+    border-radius: 5vw;
+  }
+}
+
+.collapse {
+  animation: collapse 1s ease-in-out;
+}
+
+@keyframes collapse {
+  0% {
+    width: 55%;
+    border-radius: 5vw;
+  }
+  100% {
+    width: 6%;
+    border-radius: 3vw;
+  }
+}
+
+/* TODO: Add search bar to display searched images */
+/* TODO: Dynamically set background image with some api */
